@@ -27,12 +27,17 @@ public struct CheckItemRepository: CheckItemRepositoryProtocol {
 }
 
 private struct CheckItemDTO: Decodable {
+    var id: Int
     var name: String
     var isChecked: Bool
 }
 
 private extension CheckItem {
     init(dto: CheckItemDTO) {
-        self.init(name: dto.name, isChecked: dto.isChecked)
+        self.init(
+            id: CheckItemID(rawValue: dto.id),
+            name: dto.name,
+            isChecked: dto.isChecked
+        )
     }
 }

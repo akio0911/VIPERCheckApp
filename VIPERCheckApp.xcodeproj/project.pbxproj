@@ -31,6 +31,11 @@
 		E53D0642263F900400BFA8DE /* Presenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53D063B263F900400BFA8DE /* Presenter.framework */; };
 		E53D0643263F900400BFA8DE /* Presenter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E53D063B263F900400BFA8DE /* Presenter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E53D064F263F902B00BFA8DE /* CheckItemListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53D064E263F902B00BFA8DE /* CheckItemListPresenter.swift */; };
+		E53D0667263FA95E00BFA8DE /* CheckItemAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53D0666263FA95E00BFA8DE /* CheckItemAddViewController.swift */; };
+		E53D066D263FA99400BFA8DE /* CheckItemAdd.xib in Resources */ = {isa = PBXBuildFile; fileRef = E53D066C263FA99400BFA8DE /* CheckItemAdd.xib */; };
+		E53D0673263FAA9400BFA8DE /* CheckItemListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53D0672263FAA9400BFA8DE /* CheckItemListRouter.swift */; };
+		E53D0679263FAAD400BFA8DE /* CheckItemAddRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53D0678263FAAD400BFA8DE /* CheckItemAddRouter.swift */; };
+		E53D067F263FAC3100BFA8DE /* CheckItemAddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53D067E263FAC3100BFA8DE /* CheckItemAddPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +127,11 @@
 		E53D063D263F900400BFA8DE /* Presenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Presenter.h; sourceTree = "<group>"; };
 		E53D063E263F900400BFA8DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E53D064E263F902B00BFA8DE /* CheckItemListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItemListPresenter.swift; sourceTree = "<group>"; };
+		E53D0666263FA95E00BFA8DE /* CheckItemAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItemAddViewController.swift; sourceTree = "<group>"; };
+		E53D066C263FA99400BFA8DE /* CheckItemAdd.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckItemAdd.xib; sourceTree = "<group>"; };
+		E53D0672263FAA9400BFA8DE /* CheckItemListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItemListRouter.swift; sourceTree = "<group>"; };
+		E53D0678263FAAD400BFA8DE /* CheckItemAddRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItemAddRouter.swift; sourceTree = "<group>"; };
+		E53D067E263FAC3100BFA8DE /* CheckItemAddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItemAddPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				E53D0664263F92E200BFA8DE /* CheckItemList */,
+				E53D0665263FA93B00BFA8DE /* CheckItemAdd */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -272,6 +283,8 @@
 			isa = PBXGroup;
 			children = (
 				E53D0606263ED78800BFA8DE /* RootRouter.swift */,
+				E53D0672263FAA9400BFA8DE /* CheckItemListRouter.swift */,
+				E53D0678263FAAD400BFA8DE /* CheckItemAddRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -290,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				E53D064E263F902B00BFA8DE /* CheckItemListPresenter.swift */,
+				E53D067E263FAC3100BFA8DE /* CheckItemAddPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -301,6 +315,15 @@
 				E53D05FD263ED51600BFA8DE /* CheckItemList.xib */,
 			);
 			path = CheckItemList;
+			sourceTree = "<group>";
+		};
+		E53D0665263FA93B00BFA8DE /* CheckItemAdd */ = {
+			isa = PBXGroup;
+			children = (
+				E53D0666263FA95E00BFA8DE /* CheckItemAddViewController.swift */,
+				E53D066C263FA99400BFA8DE /* CheckItemAdd.xib */,
+			);
+			path = CheckItemAdd;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E53D05FE263ED51600BFA8DE /* CheckItemList.xib in Resources */,
+				E53D066D263FA99400BFA8DE /* CheckItemAdd.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,7 +586,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E53D0679263FAAD400BFA8DE /* CheckItemAddRouter.swift in Sources */,
+				E53D0667263FA95E00BFA8DE /* CheckItemAddViewController.swift in Sources */,
 				E53D05F9263ED4D800BFA8DE /* CheckItemListViewController.swift in Sources */,
+				E53D0673263FAA9400BFA8DE /* CheckItemListRouter.swift in Sources */,
 				E53D0607263ED78800BFA8DE /* RootRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,6 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E53D067F263FAC3100BFA8DE /* CheckItemAddPresenter.swift in Sources */,
 				E53D064F263F902B00BFA8DE /* CheckItemListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

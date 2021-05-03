@@ -33,6 +33,16 @@ final class CheckItemListViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         presenter.updateView()
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(didTapAddButton)
+        )
+    }
+
+    @objc private func didTapAddButton() {
+        presenter.didTapAddButton()
     }
 }
 

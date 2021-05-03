@@ -10,6 +10,7 @@ import Domain
 
 public protocol CheckItemListPresenterInput {
     func updateView()
+    func didTapAddButton()
 }
 
 public protocol CheckItemListViewInterface: class {
@@ -18,19 +19,31 @@ public protocol CheckItemListViewInterface: class {
     func showNoContentScreen()
 }
 
+public protocol CheckItemListWireframe {
+    func presentAddScreen()
+}
+
 public class CheckItemListPresenter {
     public weak var view: CheckItemListViewInterface?
 
     private let interactor: CheckItemListInteractorInput!
 
-    public init(interactor: CheckItemListInteractorInput) {
+    private let router: CheckItemListWireframe
+
+    public init(interactor: CheckItemListInteractorInput,
+                router: CheckItemListWireframe) {
         self.interactor = interactor
+        self.router = router
     }
 }
 
 extension CheckItemListPresenter: CheckItemListPresenterInput {
     public func updateView() {
         interactor.fetchCheckItems()
+    }
+
+    public func didTapAddButton() {
+        router.presentAddScreen()
     }
 }
 
