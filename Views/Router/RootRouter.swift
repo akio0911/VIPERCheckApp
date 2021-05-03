@@ -6,8 +6,11 @@
 //
 
 import UIKit
+
+// Router は DI を行う必要があるため、Infra, Domain, Presenter に依存する
 import Infra
 import Domain
+import Presenter
 
 public class RootRouter {
     public init() {}
@@ -24,6 +27,8 @@ public class CheckItemListRouter {
         let repository = FakeRepository()
         let interactor = CheckItemListInteractor(repository: repository)
         let presenter = CheckItemListPresenter(interactor: interactor)
+
+        // ViewController は public ではないため、Router からのみインスタンス化できる
         let view = CheckItemListViewController(presenter: presenter)
 
         let navigation = UINavigationController(rootViewController: view)
@@ -40,6 +45,4 @@ private struct FakeRepository: CheckItemRepositoryProtocol {
 
         completion(.success([CheckItem(name: "hello", isChecked: true)]))
     }
-
-
 }

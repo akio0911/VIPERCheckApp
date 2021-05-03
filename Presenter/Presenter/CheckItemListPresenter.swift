@@ -5,6 +5,7 @@
 //  Created by akio0911 on 2021/05/02.
 //
 
+// Presenter は Domain にのみ依存する
 import Domain
 
 public protocol CheckItemListPresenterInput {

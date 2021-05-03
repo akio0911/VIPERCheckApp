@@ -7,7 +7,9 @@
 
 import UIKit
 import Domain
+import Presenter
 
+// ViewController は public ではないため、Router からのみインスタンス化できる
 final class CheckItemListViewController: UIViewController {
     private let presenter: CheckItemListPresenterInput
 

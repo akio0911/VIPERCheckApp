@@ -5,6 +5,7 @@
 //  Created by akio0911 on 2021/05/02.
 //
 
+// Repository は Domain モジュールにのみ依存する
 import Domain
 
 public struct CheckItemRepository: CheckItemRepositoryProtocol {
