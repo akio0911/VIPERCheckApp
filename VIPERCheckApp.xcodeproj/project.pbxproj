@@ -31,20 +31,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E53D05A9263ECA3400BFA8DE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E53D057F263EC9FD00BFA8DE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E53D05A3263ECA3400BFA8DE;
-			remoteInfo = Domain;
-		};
-		E53D05C6263ECDFA00BFA8DE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E53D057F263EC9FD00BFA8DE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E53D05C0263ECDFA00BFA8DE;
-			remoteInfo = Infra;
-		};
 		E53D05D4263ECE2000BFA8DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E53D057F263EC9FD00BFA8DE /* Project object */;
@@ -311,8 +297,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				E53D05AA263ECA3400BFA8DE /* PBXTargetDependency */,
-				E53D05C7263ECDFA00BFA8DE /* PBXTargetDependency */,
 				E53D05E3263ED1FE00BFA8DE /* PBXTargetDependency */,
 			);
 			name = VIPERCheckApp;
@@ -499,16 +483,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E53D05AA263ECA3400BFA8DE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E53D05A3263ECA3400BFA8DE /* Domain */;
-			targetProxy = E53D05A9263ECA3400BFA8DE /* PBXContainerItemProxy */;
-		};
-		E53D05C7263ECDFA00BFA8DE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E53D05C0263ECDFA00BFA8DE /* Infra */;
-			targetProxy = E53D05C6263ECDFA00BFA8DE /* PBXContainerItemProxy */;
-		};
 		E53D05D5263ECE2000BFA8DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E53D05A3263ECA3400BFA8DE /* Domain */;
