@@ -16,6 +16,8 @@ public class CheckItemAddRouter {
         let presenter = CheckItemAddPresenter(router: router)
         let view = CheckItemAddViewController(presenter: presenter)
 
+        presenter.view = view
+
         router.viewController = view
 
         return view

@@ -8,11 +8,13 @@
 import Foundation
 
 public protocol CheckItemAddPresenterInput {
-    func didTapAddButton()
+    func didChangeNameTextField(name: String)
+    func didTapAddButton(name: String)
     func didTapCancelButton()
 }
 
 public protocol CheckItemAddViewInterface: class {
+    func enableSaveButton(isEnabled: Bool)
 }
 
 public protocol CheckItemAddWireframe {
@@ -30,7 +32,11 @@ public class CheckItemAddPresenter {
 }
 
 extension CheckItemAddPresenter: CheckItemAddPresenterInput {
-    public func didTapAddButton() {
+    public func didChangeNameTextField(name: String) {
+        view?.enableSaveButton(isEnabled: !name.isEmpty)
+    }
+
+    public func didTapAddButton(name: String) {
         router.dismiss()
     }
 

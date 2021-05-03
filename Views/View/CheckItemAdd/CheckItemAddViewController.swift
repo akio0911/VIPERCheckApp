@@ -11,6 +11,9 @@ import Presenter
 final class CheckItemAddViewController: UIViewController {
     private let presenter: CheckItemAddPresenterInput
 
+    private var addButton: UIBarButtonItem!
+    private var cancelButton: UIBarButtonItem!
+
     @IBOutlet private weak var nameTextField: UITextField!
 
     init(presenter: CheckItemAddPresenterInput) {
@@ -29,24 +32,37 @@ final class CheckItemAddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
+        addButton = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
             action: #selector(didTapAddButton)
         )
+        addButton.isEnabled = false
+        navigationItem.rightBarButtonItem = addButton
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
+        cancelButton = UIBarButtonItem(
             barButtonSystemItem: .cancel,
             target: self,
             action: #selector(didTapCancelButton)
         )
+        navigationItem.leftBarButtonItem = cancelButton
     }
 
     @objc private func didTapAddButton() {
-        presenter.didTapAddButton()
+        presenter.didTapAddButton(name: nameTextField.text ?? "")
     }
 
     @objc private func didTapCancelButton() {
         presenter.didTapCancelButton()
+    }
+
+    @IBAction func didChangeNameTextField(_ sender: Any) {
+        presenter.didChangeNameTextField(name: nameTextField.text ?? "")
+    }
+}
+
+extension CheckItemAddViewController: CheckItemAddViewInterface {
+    func enableSaveButton(isEnabled: Bool) {
+        addButton.isEnabled = isEnabled
     }
 }
