@@ -263,8 +263,7 @@
 		E53D05F7263ED4B900BFA8DE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E53D05F8263ED4D800BFA8DE /* CheckItemListViewController.swift */,
-				E53D05FD263ED51600BFA8DE /* CheckItemList.xib */,
+				E53D0664263F92E200BFA8DE /* CheckItemList */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,6 +292,15 @@
 				E53D064E263F902B00BFA8DE /* CheckItemListPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E53D0664263F92E200BFA8DE /* CheckItemList */ = {
+			isa = PBXGroup;
+			children = (
+				E53D05F8263ED4D800BFA8DE /* CheckItemListViewController.swift */,
+				E53D05FD263ED51600BFA8DE /* CheckItemList.xib */,
+			);
+			path = CheckItemList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
