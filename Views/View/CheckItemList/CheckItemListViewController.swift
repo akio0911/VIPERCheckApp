@@ -44,6 +44,10 @@ final class CheckItemListViewController: UIViewController {
     @objc private func didTapAddButton() {
         presenter.didTapAddButton()
     }
+
+    func reload() {
+        presenter.reload()
+    }
 }
 
 extension CheckItemListViewController: UITableViewDataSource {

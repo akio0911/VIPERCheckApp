@@ -32,15 +32,6 @@ public protocol CheckItemListInteractorOutput: class {
     func didFetched(result: Result<[CheckItem], CheckItemListInteractorError>)
 }
 
-public enum CheckItemRepositoryError: Error {
-    case decodingError
-    case unknown
-}
-
-public protocol CheckItemRepositoryProtocol {
-    func fetch(completion: @escaping (Result<[CheckItem], CheckItemRepositoryError>) -> Void)
-}
-
 public final class CheckItemListInteractor {
     public weak var output: CheckItemListInteractorOutput?
     private let repository: CheckItemRepositoryProtocol

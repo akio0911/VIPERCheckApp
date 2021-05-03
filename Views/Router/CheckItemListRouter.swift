@@ -13,11 +13,11 @@ import Domain
 import Presenter
 
 public class CheckItemListRouter {
-    private weak var viewController: UIViewController?
+    private weak var checkItemListViewController: CheckItemListViewController?
 
     static func assembleModule() -> UIViewController {
-//        let repository = CheckItemRepository()
-        let repository = FakeRepository()
+        let repository = CheckItemRepository()
+//        let repository = FakeRepository()
         let interactor = CheckItemListInteractor(repository: repository)
         let router = CheckItemListRouter()
         let presenter = CheckItemListPresenter(
@@ -33,7 +33,7 @@ public class CheckItemListRouter {
         interactor.output = presenter
         presenter.view = view
 
-        router.viewController = view
+        router.checkItemListViewController = view
 
         return navigation
     }
@@ -41,10 +41,19 @@ public class CheckItemListRouter {
 
 extension CheckItemListRouter: CheckItemListWireframe {
     public func presentAddScreen() {
-        viewController?.present(
-            UINavigationController(
-                rootViewController: CheckItemAddRouter.assembleModule()
-            ),
+        let checkItemAddViewController = CheckItemAddRouter.assembleModule(onDismissHandler: { [weak self] in
+
+            self?.checkItemListViewController?.reload()
+        })
+
+        let nav = UINavigationController(
+            rootViewController: checkItemAddViewController
+        )
+
+        nav.modalPresentationStyle = .fullScreen
+
+        checkItemListViewController?.present(
+            nav,
             animated: true,
             completion: nil
         )
@@ -63,5 +72,10 @@ private struct FakeRepository: CheckItemRepositoryProtocol {
         ]
 
         completion(.success(checkItems))
+    }
+
+    public func create(name: String, completion: @escaping (Result<Void, CheckItemRepositoryError>) -> Void) {
+
+        completion(.failure(.unknown))
     }
 }

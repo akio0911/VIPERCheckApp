@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E52682A1263FC0A400AE0238 /* CheckItemAddInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52682A0263FC0A400AE0238 /* CheckItemAddInteractor.swift */; };
+		E52682A8263FC17D00AE0238 /* CheckItemRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52682A7263FC17D00AE0238 /* CheckItemRepositoryProtocol.swift */; };
 		E53D058B263EC9FD00BFA8DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53D058A263EC9FD00BFA8DE /* AppDelegate.swift */; };
 		E53D058D263EC9FD00BFA8DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53D058C263EC9FD00BFA8DE /* SceneDelegate.swift */; };
 		E53D0594263EC9FE00BFA8DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E53D0593263EC9FE00BFA8DE /* Assets.xcassets */; };
@@ -39,6 +41,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E52682B1263FC97C00AE0238 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E53D057F263EC9FD00BFA8DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E53D063A263F900400BFA8DE;
+			remoteInfo = Presenter;
+		};
 		E53D05D4263ECE2000BFA8DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E53D057F263EC9FD00BFA8DE /* Project object */;
@@ -101,6 +110,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E52682A0263FC0A400AE0238 /* CheckItemAddInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItemAddInteractor.swift; sourceTree = "<group>"; };
+		E52682A7263FC17D00AE0238 /* CheckItemRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItemRepositoryProtocol.swift; sourceTree = "<group>"; };
 		E53D0587263EC9FD00BFA8DE /* VIPERCheckApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPERCheckApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53D058A263EC9FD00BFA8DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E53D058C263EC9FD00BFA8DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +188,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E52682A6263FC16800AE0238 /* RepositoryProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				E52682A7263FC17D00AE0238 /* CheckItemRepositoryProtocol.swift */,
+			);
+			path = RepositoryProtocol;
+			sourceTree = "<group>";
+		};
 		E53D057E263EC9FD00BFA8DE = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +238,7 @@
 			children = (
 				E53D05A6263ECA3400BFA8DE /* Domain.h */,
 				E53D05A7263ECA3400BFA8DE /* Info.plist */,
+				E52682A6263FC16800AE0238 /* RepositoryProtocol */,
 				E53D05B5263ECA5700BFA8DE /* Entity */,
 				E53D05B7263ECABE00BFA8DE /* Interactor */,
 			);
@@ -237,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				E53D05B8263ECB6200BFA8DE /* CheckItemListInteractor.swift */,
+				E52682A0263FC0A400AE0238 /* CheckItemAddInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -433,6 +454,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E52682B2263FC97C00AE0238 /* PBXTargetDependency */,
 				E53D0618263EDCBB00BFA8DE /* PBXTargetDependency */,
 				E53D05F3263ED24F00BFA8DE /* PBXTargetDependency */,
 			);
@@ -569,6 +591,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52682A1263FC0A400AE0238 /* CheckItemAddInteractor.swift in Sources */,
+				E52682A8263FC17D00AE0238 /* CheckItemRepositoryProtocol.swift in Sources */,
 				E53D05B9263ECB6200BFA8DE /* CheckItemListInteractor.swift in Sources */,
 				E53D05B3263ECA4200BFA8DE /* CheckItem.swift in Sources */,
 			);
@@ -606,6 +630,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E52682B2263FC97C00AE0238 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E53D063A263F900400BFA8DE /* Presenter */;
+			targetProxy = E52682B1263FC97C00AE0238 /* PBXContainerItemProxy */;
+		};
 		E53D05D5263ECE2000BFA8DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E53D05A3263ECA3400BFA8DE /* Domain */;

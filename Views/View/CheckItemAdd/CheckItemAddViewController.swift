@@ -33,7 +33,7 @@ final class CheckItemAddViewController: UIViewController {
         super.viewDidLoad()
 
         addButton = UIBarButtonItem(
-            barButtonSystemItem: .add,
+            barButtonSystemItem: .save,
             target: self,
             action: #selector(didTapAddButton)
         )

@@ -11,6 +11,7 @@ import Domain
 public protocol CheckItemListPresenterInput {
     func updateView()
     func didTapAddButton()
+    func reload()
 }
 
 public protocol CheckItemListViewInterface: class {
@@ -44,6 +45,10 @@ extension CheckItemListPresenter: CheckItemListPresenterInput {
 
     public func didTapAddButton() {
         router.presentAddScreen()
+    }
+
+    public func reload() {
+        interactor.fetchCheckItems()
     }
 }
 

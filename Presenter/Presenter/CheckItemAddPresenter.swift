@@ -5,7 +5,7 @@
 //  Created by akio0911 on 2021/05/03.
 //
 
-import Foundation
+import Domain
 
 public protocol CheckItemAddPresenterInput {
     func didChangeNameTextField(name: String)
@@ -24,9 +24,13 @@ public protocol CheckItemAddWireframe {
 public class CheckItemAddPresenter {
     public weak var view: CheckItemAddViewInterface?
 
+    private let interactor: CheckItemAddInteractorInput!
+
     private let router: CheckItemAddWireframe
 
-    public init(router: CheckItemAddWireframe) {
+    public init(interactor: CheckItemAddInteractorInput,
+                router: CheckItemAddWireframe) {
+        self.interactor = interactor
         self.router = router
     }
 }
@@ -37,10 +41,21 @@ extension CheckItemAddPresenter: CheckItemAddPresenterInput {
     }
 
     public func didTapAddButton(name: String) {
-        router.dismiss()
+        interactor.add(name: name)
     }
 
     public func didTapCancelButton() {
         router.dismiss()
+    }
+}
+
+extension CheckItemAddPresenter: CheckItemAddInteractorOutput {
+    public func didCreated(result: Result<Void, CheckItemAddInteractorError>) {
+        switch result {
+        case .success:
+            router.dismiss()
+        case .failure:
+            router.dismiss()
+        }
     }
 }
